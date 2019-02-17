@@ -20,8 +20,8 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 
     <!-- Fonts Awesome-->
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
+          integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 </head>
 <body>
 <div id="app">
@@ -44,7 +44,7 @@
                            role="button" aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu">
                             <li><a href="{{route('admin.category.index')}}"> Categories </a></li>
-                            <li><a href="#"> Materials </a></li>
+                            <li><a href="{{route('admin.article.index')}}"> Materials </a></li>
                         </ul>
                     </li>
                 </ul>
