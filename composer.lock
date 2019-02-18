@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "66ca7343889332c2b8ecca11c251430c",
+    "content-hash": "d90fc0e3a1efb938aecc88b44544a4ba",
     "packages": [
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -548,6 +548,59 @@
                 "url"
             ],
             "time": "2018-12-04T20:46:45+00:00"
+        },
+        {
+            "name": "imponeer/composer-yarn-installer",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/imponeer/composer-yarn-installer.git",
+                "reference": "23b756174b6ee7bc64bf01259edc9f59e341f921"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/imponeer/composer-yarn-installer/zipball/23b756174b6ee7bc64bf01259edc9f59e341f921",
+                "reference": "23b756174b6ee7bc64bf01259edc9f59e341f921",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.1",
+                "matthiasmullie/path-converter": "^1.1",
+                "mouf/nodejs-installer": "~1.0",
+                "php": ">=5.4"
+            },
+            "require-dev": {
+                "composer/composer": "*",
+                "ext-json": "*",
+                "php": ">=7.1",
+                "phpunit/phpunit": "^7.0",
+                "symfony/console": "*",
+                "symfony/filesystem": "*",
+                "symfony/process": "*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "Imponeer\\ComposerYarnInstaller\\Plugin"
+                ]
+            },
+            "autoload": {
+                "psr-4": {
+                    "Imponeer\\ComposerYarnInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Raimondas Rimkevičius",
+                    "email": "github@mekdrop.name"
+                }
+            ],
+            "description": "Composer plugin to install yarn in vendor/",
+            "time": "2019-02-17T15:36:18+00:00"
         },
         {
             "name": "jakub-onderka/php-console-color",
@@ -1103,6 +1156,55 @@
             "time": "2019-02-01T08:50:36+00:00"
         },
         {
+            "name": "matthiasmullie/path-converter",
+            "version": "1.1.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/matthiasmullie/path-converter.git",
+                "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/matthiasmullie/path-converter/zipball/5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+                "reference": "5e4b121c8b9f97c80835c1d878b0812ba1d607c9",
+                "shasum": ""
+            },
+            "require": {
+                "ext-pcre": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~4.8"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "MatthiasMullie\\PathConverter\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Matthias Mullie",
+                    "email": "pathconverter@mullie.eu",
+                    "homepage": "http://www.mullie.eu",
+                    "role": "Developer"
+                }
+            ],
+            "description": "Relative path converter",
+            "homepage": "http://github.com/matthiasmullie/path-converter",
+            "keywords": [
+                "converter",
+                "path",
+                "paths",
+                "relative"
+            ],
+            "time": "2018-10-25T15:19:41+00:00"
+        },
+        {
             "name": "monolog/monolog",
             "version": "1.24.0",
             "source": {
@@ -1179,6 +1281,62 @@
                 "psr-3"
             ],
             "time": "2018-11-05T09:00:11+00:00"
+        },
+        {
+            "name": "mouf/nodejs-installer",
+            "version": "v1.0.13",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/thecodingmachine/nodejs-installer.git",
+                "reference": "e9bc2e7c75665913dd73dc4765b40757e6796ee8"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/thecodingmachine/nodejs-installer/zipball/e9bc2e7c75665913dd73dc4765b40757e6796ee8",
+                "reference": "e9bc2e7c75665913dd73dc4765b40757e6796ee8",
+                "shasum": ""
+            },
+            "require": {
+                "composer-plugin-api": "^1.0.0",
+                "ext-openssl": "*",
+                "php": ">=5.3.0"
+            },
+            "require-dev": {
+                "composer/composer": "*"
+            },
+            "type": "composer-plugin",
+            "extra": {
+                "class": [
+                    "Mouf\\NodeJsInstaller\\NodeJsPlugin"
+                ],
+                "mouf": {
+                    "logo": "node-js.png"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "Mouf\\NodeJsInstaller\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "David Négrier",
+                    "email": "d.negrier@thecodingmachine.com",
+                    "homepage": "http://mouf-php.com"
+                }
+            ],
+            "description": "An installer package that let's you install NodeJS and NPM as a Composer dependency.",
+            "homepage": "http://mouf-php.com/packages/mouf/nodejs-installer",
+            "keywords": [
+                "installer",
+                "nodejs",
+                "npm"
+            ],
+            "time": "2018-04-16T16:03:09+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -3056,6 +3214,60 @@
             "description": "CssToInlineStyles is a class that enables you to convert HTML-pages/files into HTML-pages/files with inline styles. This is very useful when you're sending emails.",
             "homepage": "https://github.com/tijsverkoyen/CssToInlineStyles",
             "time": "2017-11-27T11:13:29+00:00"
+        },
+        {
+            "name": "unisharp/laravel-ckeditor",
+            "version": "4.7.2",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/UniSharp/laravel-ckeditor.git",
+                "reference": "5c75f3f9128ec8567955913074795deee5869c5c"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/UniSharp/laravel-ckeditor/zipball/5c75f3f9128ec8567955913074795deee5869c5c",
+                "reference": "5c75f3f9128ec8567955913074795deee5869c5c",
+                "shasum": ""
+            },
+            "require": {
+                "illuminate/support": "~5.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Unisharp\\Ckeditor\\": "./"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPL-2.0+",
+                "LGPL-2.1+",
+                "MPL-1.1+"
+            ],
+            "authors": [
+                {
+                    "name": "CKSource",
+                    "homepage": "http://cksource.com"
+                },
+                {
+                    "name": "UniSharp Ltd. (Composer Package Maintainer)",
+                    "homepage": "http://www.unisharp.com"
+                }
+            ],
+            "description": "JavaScript WYSIWYG web text editor (for laravel).",
+            "homepage": "http://ckeditor.com",
+            "keywords": [
+                "CKEditor",
+                "editor",
+                "fckeditor",
+                "html",
+                "javascript",
+                "laravel",
+                "richtext",
+                "text",
+                "wysiwyg"
+            ],
+            "time": "2017-11-01T04:33:40+00:00"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -4938,7 +5150,9 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": [],
+    "stability-flags": {
+        "imponeer/composer-yarn-installer": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

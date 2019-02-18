@@ -89,6 +89,11 @@
       <path value="$PROJECT_DIR$/vendor/phar-io/manifest" />
       <path value="$PROJECT_DIR$/vendor/phar-io/version" />
       <path value="$PROJECT_DIR$/vendor/webmozart/assert" />
+      <path value="$PROJECT_DIR$/vendor/unisharp/laravel-ckeditor" />
+      <path value="$PROJECT_DIR$/vendor/mouf/nodejs-installer" />
+      <path value="$PROJECT_DIR$/vendor/nodejs/nodejs" />
+      <path value="$PROJECT_DIR$/vendor/imponeer/composer-yarn-installer" />
+      <path value="$PROJECT_DIR$/vendor/matthiasmullie/path-converter" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.1" />
