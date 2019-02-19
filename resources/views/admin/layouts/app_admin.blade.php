@@ -42,14 +42,14 @@
                 <ul class="navbar-nav mr-auto">
 
                     <li>
-                        <a href="{{route('admin.index')}}" >Status bar</a>
+                        <a class="nav-link" href="{{route('admin.index')}}" >Status bar</a>
                     </li>
-                    <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown"
                            role="button" aria-expanded="false">Blog</a>
                         <ul class="dropdown-menu">
-                            <li><a href="{{route('admin.category.index')}}"> Categories </a></li>
-                            <li><a href="{{route('admin.article.index')}}"> Materials </a></li>
+                            <li><a class="dropdown-item nav-link" href="{{route('admin.category.index')}}"> Categories </a></li>
+                            <li><a class="dropdown-item nav-link" href="{{route('admin.article.index')}}"> Materials </a></li>
                         </ul>
                     </li>
                 </ul>
