@@ -19,7 +19,12 @@ Route::group(['prefix'=>'admin', 'namespace'=>'admin', 'middleware'=>['auth']], 
     Route::get('/', 'DashboardController@dashboard')->name('admin.index');
     Route::resource('/category', 'CategoryController', ['as'=>'admin']);
     Route::resource('/article', 'ArticleController', ['as'=>'admin']);
+    Route::group(['prefix' => 'user_managment', 'namespace'=>'UserManagment'], function (){
+        Route::resource('/users', 'UserController', ['as'=>'admin.user_managment']);
+    });
 });
+
+
 
 Route::get('/', 'BlogController@home')->name('home');
 
