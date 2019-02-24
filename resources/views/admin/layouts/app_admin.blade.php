@@ -53,6 +53,9 @@
                         </ul>
                     </li>
                     <li>
+                        <a class="nav-link" href="{{route('admin.comment.index')}}" >Comments</a>
+                    </li>
+                    <li>
                         <a class="nav-link" href="{{route('admin.user_managment.users.index')}}" >User managment</a>
                     </li>
                 </ul>

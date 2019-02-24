@@ -177,6 +177,7 @@ return [
 
         // My packages
         Unisharp\Ckeditor\ServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
 
         // My providers
         App\Providers\BlogzServiceProvider::class,
@@ -228,6 +229,8 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
+
+        'Image' => Intervention\Image\Facades\Image::class,
 
     ],
 

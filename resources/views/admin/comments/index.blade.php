@@ -4,31 +4,29 @@
 
     <div class="container">
         @component('admin.components.breadcrumb')
-            @slot('title') News list @endslot
+            @slot('title') Comments list @endslot
             @slot('parent') Home @endslot
-            @slot('active') News @endslot
+            @slot('active') Comments @endslot
         @endcomponent
-        <hr>
-        <a href="{{route('admin.article.create')}}" class="btn btn-primary pull-right">
-            <i class="fa fa-plus-square"></i> Create news</a>
-        <table class="table table-striped  mt-3">
+
+        <table class="table table-striped">
             <thead>
-            <th>Name</th>
-            <th>Publication</th>
+            <th>Text</th>
+            <th>Approved</th>
             <th class="text-right">Action</th>
             </thead>
             <tbody>
-            @forelse($articles as $article)
+            @forelse($comments as $comment)
                 <tr>
-                    <td>{{$article->title}}</td>
-                    <td>{{$article->published}}</td>
+                    <td>{{$comment->comment}}</td>
+                    <td>{{$comment->approved}}</td>
                     <td class="text-right">
                         <form onsubmit="if(confirm('Delate?')){return true}else{return false}"
-                              action="{{route('admin.article.destroy', $article)}}" method="post">
-                            <input type="hidden" name="_method" value="DELETE">
+                              action="{{route('admin.comment.destroy', $comment)}}" method="post">
+                            {{ method_field('DELETE') }}
                             {{csrf_field()}}
 
-                            <a class="btn btn-default" href="{{route('admin.article.edit', $article)}}">
+                            <a class="btn btn-default" href="{{route('admin.comment.edit', $comment)}}">
                                 <i class="fa fa-edit"></i>
                             </a>
 
@@ -46,7 +44,7 @@
             <tr>
                 <td colspan="3">
                     <ul class="pagination pull-right">
-                        {{$articles->links()}}
+                        {{$comments->links()}}
                     </ul>
                 </td>
             </tr>

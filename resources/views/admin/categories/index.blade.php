@@ -11,7 +11,7 @@
     <hr>
     <a href="{{route('admin.category.create')}}" class="btn btn-primary pull-right">
         <i class="fa fa-plus-square"></i> Create category</a>
-    <table class="table table-striped">
+    <table class="table table-striped mt-3">
         <thead>
         <th>Name</th>
         <th>Publication</th>

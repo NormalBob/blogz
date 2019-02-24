@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Article;
 use App\Category;
+use Image;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -44,6 +45,17 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = Article::create($request->all());
+
+        if($request->hasFile('image'))
+        {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(600, 400)->save($location);
+
+            $article->image = $filename;
+            $article->save();
+        }
 
         // Categories
         if($request->input('categories')) :
@@ -89,6 +101,17 @@ class ArticleController extends Controller
     public function update(Request $request, Article $article)
     {
         $article->update($request->except('slug'));
+
+        if($request->hasFile('image'))
+        {
+            $image = $request->file('image');
+            $filename = time() . '.' . $image->getClientOriginalExtension();
+            $location = public_path('images/' . $filename);
+            Image::make($image)->resize(600, 400)->save($location);
+
+            $article->image = $filename;
+            $article->save();
+        }
 
         // Categories
         $article->categories()->detach();

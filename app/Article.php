@@ -29,4 +29,8 @@ class Article extends Model
     {
         return $query->orderBy('created_at', 'desc')->take($count)->get();
     }
+
+    public function comments(){
+        return $this->hasMany('App\Comment');
+    }
 }
