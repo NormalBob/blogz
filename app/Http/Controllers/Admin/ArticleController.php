@@ -15,8 +15,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.articles.index', [
             'articles' => Article::orderBy('created_at', 'desc')->paginate(10)
         ]);
@@ -27,8 +28,9 @@ class ArticleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.articles.create', [
             'article' => [],
             'categories' => Category::with('children')->where('parent_id', 0)->get(),
@@ -45,6 +47,7 @@ class ArticleController extends Controller
     public function store(Request $request)
     {
         $article = Article::create($request->all());
+
 
         if($request->hasFile('image'))
         {
@@ -82,8 +85,9 @@ class ArticleController extends Controller
      * @param  \App\Article  $article
      * @return \Illuminate\Http\Response
      */
-    public function edit(Article $article)
+    public function edit(Article $article, Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.articles.edit', [
             'article' => $article,
             'categories' => Category::with('children')->where('parent_id', 0)->get(),

@@ -12,7 +12,8 @@ use App\User;
 class DashboardController extends Controller
 {
     //Dashboard
-    public function dashboard(){
+    public function dashboard(Request $request){
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.dashboard', [
             'categories' => Category::lastCategories(5),
             'articles' => Article::lastArticles(5),

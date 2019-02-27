@@ -8,13 +8,16 @@ use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
+
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.user_managment.users.index', [
             'users' => User::paginate(10)
         ]);
@@ -58,8 +61,9 @@ class UserController extends Controller
      * @param  \App\User  $user
      * @return \Illuminate\Http\Response
      */
-    public function edit(User $user)
+    public function edit(User $user, Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.user_managment.users.edit', [
             'user' => $user
         ]);
@@ -100,6 +104,7 @@ class UserController extends Controller
      */
     public function destroy(User $user)
     {
+
         $user->delete();
 
         return redirect()->route('admin.user_managment.users.index');

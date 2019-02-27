@@ -15,8 +15,9 @@ class CommentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.comments.index', [
             'comments' => Comment::orderBy('created_at', 'desc')->paginate(10)
         ]);
@@ -83,8 +84,9 @@ class CommentController extends Controller
      * @param  \App\Comment  $comment
      * @return \Illuminate\Http\Response
      */
-    public function edit(Comment $comment)
+    public function edit(Comment $comment, Request $request)
     {
+        $request->user()->authorizeRoles(['admin']);
         return view('admin.comments.edit', [
             'comment' => $comment
         ]);
