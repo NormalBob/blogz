@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Admin\UserManagment;
 
+use App\Role;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -65,7 +66,9 @@ class UserController extends Controller
     {
         $request->user()->authorizeRoles(['admin']);
         return view('admin.user_managment.users.edit', [
-            'user' => $user
+            'user' => $user,
+            'roles' => Role::get(),
+            'delimiter' => ''
         ]);
     }
 
@@ -91,7 +94,11 @@ class UserController extends Controller
 
         $user->save();
 
-
+        // Roles
+        $user->roles()->detach();
+        if($request->input('roles')) :
+            $user->roles()->attach($request->input('roles'));
+        endif;
 
         return redirect()->route('admin.user_managment.users.index');
     }

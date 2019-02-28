@@ -15,6 +15,11 @@
 <input type="text" class="form-control" name="email"
        placeholder="Email" value="@if(old('email')){{old('email')}}@else{{$user->email ?? ""}}@endif" required>
 
+<label for="" class="mt-3">Role</label>
+<select class="form-control" name="roles[]" multiple="">
+    @include('admin.user_managment.users.partials.roles', ['roles' => $roles])
+</select>
+
 <label for="">Password</label>
 <input type="text" class="form-control" name="password" placeholder="Password">
 
